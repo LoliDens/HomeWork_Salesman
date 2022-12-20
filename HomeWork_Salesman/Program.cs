@@ -16,6 +16,7 @@ namespace HomeWork_Salesman
                 new Item("Меч",20),
                 new Item("Лук",18)
             });
+
             int coinsBuyer = 30;
             Buyer buyer = new Buyer(coinsBuyer,new List<Item>());
 
@@ -75,7 +76,6 @@ namespace HomeWork_Salesman
 
         public Item SellItem(int indexItem) 
         {
-
             Item item = Items[indexItem];
             Items.RemoveAt(indexItem);
             Coins += item.Price;
@@ -128,6 +128,7 @@ namespace HomeWork_Salesman
             _salesman = salesman;
             _buyer = buyer;
         }
+        
         public void Trading() 
         {
             const string CommandShowItemSalesman = "1";
@@ -195,6 +196,7 @@ namespace HomeWork_Salesman
         {
             int result;
             string number = Console.ReadLine();
+
             while (int.TryParse(number, out result) == false) 
             {
                 Console.WriteLine("Ошибка ввода.\nВведите число повторно");
